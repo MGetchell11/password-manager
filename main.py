@@ -1,71 +1,14 @@
 from tkinter import *
-import os
 
-def login():
-    global main_screen
-    Text(font="Calibri").pack()
-
-
-
-def main_account_screen():
-    global main_screen
-    main_screen = Tk()
-    main_screen.geometry("300x250")
-    main_screen.title("Password Manager")
-    password_verify = StringVar
-    Label(text="What is the password?", width="300", height="2", font=("Calibri", 13)).pack()
-    Entry(textvariable=password_verify, show="*").pack()
-    Button(text="Login", height="2", width="30").pack()
-    if password_verify == "password":
-        login()
-    else:
-        print("does not work")
-
-
-
-
-    main_screen.mainloop()
-
-
-main_account_screen()
-
-
-
-#login_pass = "password"
-#pass_list = {
-#    "youtube": "123456",
-#    "gmail": "09876",
-#    "skype": "cat-dog"
-#}
-
-
-# check login credentials
-#def login():
-#    while True:
-#        usr_inp_1 = input("What is the password?\n")
-#        if usr_inp_1 == "q":
-#            sys.exit(0)
-#        elif usr_inp_1 == login_pass:
-#            print("Welcome!\n")
-#            manager()
-#        else:
-#            print("Incorrect password\n")
-#            continue
-
-
-# get passwords from manager
-#def manager():
-#    while True:
-#        usr_inp_2 = input("Which password do you want?\n")
-#        if usr_inp_2 == "q":
-#            sys.exit(0)
-#        elif usr_inp_2 in pass_list:
-#            print(pass_list.get(usr_inp_2) + "\n")
-#            continue
-#        else:
-#            print("not a valid selection\n")
-#            continue
-
-
-
-
+def screen_2():
+    second_screen = Tk()
+    second_screen.geometry("300x250")
+    second_screen.title("Passwords Updated!")
+    Label(text="gmail = 123456\nyahoo = 98765\nspotify = password123\nsteam = 13579", font="Calibri").pack()
+def screen_1():
+    first_screen = Tk()
+    first_screen.geometry("300x250")
+    first_screen.title("Password Manager")
+    Button(text="Get Passwords", height="2", width="30", command=screen_2).pack()
+    first_screen.mainloop()
+screen_1()
